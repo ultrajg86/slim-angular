@@ -17,11 +17,12 @@ export class HeroService {
 
   getHeroes(): Promise<Hero[]> {
 
-    this.http.get('http://localhost:8888/heroes', {headers: this.headers}).map(res=>res.json()).subscribe(()=>this.people);
+    //this.http.get('http://localhost:8888/heroes', {headers: this.headers}).map(response => <string[]> response.json());
+
+    this.http.get('http://localhost:8888/heroes', {headers: this.headers}).map(e=>e.json()).catch(this.handleError);
 
     console.log(Hero);
 
-	
     return this.http.get(this.heroesUrl)
                .toPromise()
                .then(response => response.json().data as Hero[])

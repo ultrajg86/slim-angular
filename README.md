@@ -32,9 +32,9 @@ composer dump-autoload -o
 
 directory : /html/my-app/
 
-angular cli install
-angular start : ng serve --open	
-angular port : 4200
+angular cli install<br/>
+angular start : ng serve --open	<br/>
+angular port : 4200<br/>
 
 angular release : ng build ( create 'dist' folder in current project)
 
