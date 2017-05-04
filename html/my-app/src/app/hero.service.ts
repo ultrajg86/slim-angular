@@ -1,7 +1,10 @@
 import { Injectable }    from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, Response } from '@angular/http';
+
+import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
 
 import { Hero } from './hero';
 
@@ -12,16 +15,47 @@ export class HeroService {
   private heroesUrl = 'api/heroes';  // URL to web api
 
   private people;
+  private result;
 
   constructor(private http: Http) { }
 
+/*	
+  getTest(): Observable<Hero[]>{
+	return this.http.get('http://localhost:8888/heroes', {headers: this.headers}).map(response: Response) => <Hero[]> response.json());
+  }
+*/
   getHeroes(): Promise<Hero[]> {
 
-    //this.http.get('http://localhost:8888/heroes', {headers: this.headers}).map(response => <string[]> response.json());
+/*
+    var Obj = this.http.get('127.0.0.1:8888/heroes', {headers: this.headers})
+		.subscribe(
+			res => {
+				var data = res.json().data;
+				for(var i=0; i<data.length; i++){
+					console.log(data[i].id + ' : ' + data[i].name);
+				}
+				
+			},
+			error=>{
+				console.error(error.status + ':' + error.statusText);
+			}
+		);
 
-    this.http.get('http://localhost:8888/heroes', {headers: this.headers}).map(e=>e.json()).catch(this.handleError);
 
-    console.log(Hero);
+	this.http.get('http://localhost:8888/testheroes', {headers: this.headers})
+		.subscribe(
+			res => this.result = JSON.stringify(res.json()),
+			err => console.error(err),
+			() => console.log('done')
+		);
+*/		
+
+this.http.get('/heroes').map((response: Response) => response.text())
+.subscribe(
+data => console.log('S'),
+error => console.log('Could not load datas')
+);
+
 
     return this.http.get(this.heroesUrl)
                .toPromise()
@@ -29,6 +63,10 @@ export class HeroService {
                .catch(this.handleError);
   }
 
+private extractData(res: Response) {
+        let body = res.json();
+        return body.data || { };
+    }
 
   getHero(id: number): Promise<Hero> {
     const url = `${this.heroesUrl}/${id}`;
@@ -67,5 +105,11 @@ export class HeroService {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);
   }
+
+  private handleOError(error: any){
+	Observable.of(false);
+	return Observable.of(false);
+  }
+
 }
 
