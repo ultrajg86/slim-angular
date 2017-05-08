@@ -31,6 +31,7 @@ export class HeroesComponent implements OnInit {
         this.heroes.push(hero);
         this.selectedHero = null;
       });
+    console.log('add');
   }
 
   delete(hero: Hero): void {

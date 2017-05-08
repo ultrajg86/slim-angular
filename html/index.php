@@ -1,7 +1,11 @@
 <?php
 
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT');
+
 ini_set('display_errors', true);
 error_reporting(E_ALL);
+
 
 /*
  * template url : https://bootstrapmade.com/demo/Moderna/

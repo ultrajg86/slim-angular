@@ -18,6 +18,9 @@ Copyright (c) 2000, 2016, Oracle, MariaDB Corporation Ab and others.
 
 /html/
 
+# PHP RUN
+php -S localhost:8080
+
 # PHP Framework
 
 Slim3 Framwork

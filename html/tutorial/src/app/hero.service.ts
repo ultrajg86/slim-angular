@@ -19,23 +19,28 @@ export class HeroService {
 
   constructor(private http: Http) { }
 
-  getHeroes(): Promise<Hero[]> {
+  getApi(): void{
 
-var url: string = 'http://localhost:8888/testheroes';
+  var url: string = "http://127.0.0.1:8080/testheroes";
 	
-this.result = this.http.get(url).map((response: Response)=>response.json()).subscribe(
-data=>{
-	console.log('data', data);
-},
-error=>{
-	console.log('Error');
-},
-()=>{
-	console.log('finished');
-}
+this.result = this.http.get(url).map((response: Response)=>response.text()).subscribe(
+	data=>{
+		console.log('data', data);
+	},
+	error=>{
+		console.log('Error');
+	},
+	()=>{
+		console.log('done');
+	}
 );
 
 console.log(this.result);
+
+
+  }
+
+  getHeroes(): Promise<Hero[]> {
 
     return this.http.get(this.heroesUrl)
                .toPromise()
