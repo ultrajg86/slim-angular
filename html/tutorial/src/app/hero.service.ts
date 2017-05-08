@@ -19,36 +19,7 @@ export class HeroService {
 
   constructor(private http: Http) { }
 
-/*	
-  getTest(): Observable<Hero[]>{
-	return this.http.get('http://localhost:8888/heroes', {headers: this.headers}).map(response: Response) => <Hero[]> response.json());
-  }
-*/
   getHeroes(): Promise<Hero[]> {
-
-/*
-    var Obj = this.http.get('127.0.0.1:8888/heroes', {headers: this.headers})
-		.subscribe(
-			res => {
-				var data = res.json().data;
-				for(var i=0; i<data.length; i++){
-					console.log(data[i].id + ' : ' + data[i].name);
-				}
-				
-			},
-			error=>{
-				console.error(error.status + ':' + error.statusText);
-			}
-		);
-
-
-	this.http.get('http://localhost:8888/testheroes', {headers: this.headers})
-		.subscribe(
-			res => this.result = JSON.stringify(res.json()),
-			err => console.error(err),
-			() => console.log('done')
-		);
-*/		
 
 var url: string = 'http://localhost:8888/testheroes';
 	
@@ -57,7 +28,7 @@ data=>{
 	console.log('data', data);
 },
 error=>{
-	console.log('getCurrentTime Error');
+	console.log('Error');
 },
 ()=>{
 	console.log('finished');
