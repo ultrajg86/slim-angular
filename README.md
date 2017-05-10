@@ -1,5 +1,5 @@
-# Client
+# Client - client/my-app folder
 - angular2
 
-# Server
+# Server - html folder
 - php 

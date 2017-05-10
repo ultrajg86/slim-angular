@@ -1,5 +1,5 @@
 import { Injectable }    from '@angular/core';
-import { Headers, Http, Response } from '@angular/http';
+import { Headers, Http, Response, RequestOptions } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -12,7 +12,7 @@ import { Hero } from './hero';
 export class HeroService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private heroesUrl = 'api/heroes';  // URL to web api
+  private heroesUrl = 'http://localhost:8888/';  // URL to web api
 
   private people;
   private result;
@@ -21,11 +21,18 @@ export class HeroService {
 
   getApi(): void{
 
+
   var url: string = "http://localhost:8888/testheroes";
 	
 this.result = this.http.get(url).map((response: Response)=>response.text()).subscribe(
 	data=>{
 		console.log('data', data);
+	},
+	error=>{
+		console.log(error);
+	},
+	()=>{
+		console.log('done');
 	}
 );
 
