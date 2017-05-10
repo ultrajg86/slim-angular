@@ -22,9 +22,9 @@ export class HeroService {
   getApi(): void{
 
 
-  var url: string = "http://localhost:8888/testheroes";
+  var url: string = "http://localhost:8888/hello/aaaaaaaaaaa";
 	
-this.result = this.http.get(url).map((response: Response)=>response.text()).subscribe(
+this.result = this.http.get(url).map((response: Response)=>response.json()).subscribe(
 	data=>{
 		console.log('data', data);
 	},
