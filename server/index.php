@@ -1,10 +1,11 @@
 <?php
 
-/*
 header( 'Access-Control-Allow-Origin: *' );
+/*
 header( 'Access-Control-Allow-Methods: GET, POST, OPTIONS' );
 header( "Access-Control-Allow-Headers: X-AMZ-META-TOKEN-ID, X-AMZ-META-TOKEN-SECRET, Content-Type, Accept" );
 */
+
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
@@ -40,6 +41,14 @@ $app->get('/testheroes', function (Request $request, Response $response) {
     $response->getBody()->write("Hello, $name");
 
     return $response;
+});
+
+$app->get('/api/{name}', function (Request $request, Response $response) {
+    $name = $request->getAttribute('name');
+    $result = array(
+		'name'=>$name
+	);
+	return json_encode($result);
 });
 
 $app->run();
