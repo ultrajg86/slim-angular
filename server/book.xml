@@ -1,0 +1,144 @@
+<rss xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:activity="http://activitystrea.ms/spec/1.0/" version="2.0">
+<channel>
+<title>
+<![CDATA[ 압쓰! ]]>
+</title>
+<link>http://blog.naver.com/ultrajg86</link>
+<description>
+<![CDATA[ if(띵가띵가){ echo "참 바른생활"; } ]]>
+</description>
+<language>ko</language>
+<generator>Naver Blog</generator>
+<pubDate>Thu, 11 May 2017 11:45:03 +0900</pubDate>
+<item>
+<author>ultrajg86</author>
+<category>
+<![CDATA[ Hypertext M.L ]]>
+</category>
+<title>
+<![CDATA[ 레이어 띄우기 ]]>
+</title>
+<link>http://blog.naver.com/ultrajg86/220996245288</link>
+<guid>http://blog.naver.com/ultrajg86/220996245288</guid>
+<description>
+<![CDATA[
+알바를 하다보니 레이어로 팝업띄우는게 여러번 들어온다 작업량도 많지않고 시간도 많이 안들어가고 한번하면 치느님을 영접할 정도는 되니 쏠쏠하지 ㅋㅋㅋㅋㅋㅋㅋ 많이 오면 좋은데 많이 안와서 좀...아쉽지만 ㅋㅋㅋㅋㅋㅋ 서론이 길다 이제 본론으로! &lt;?php $checkToday = $_COOKIE['longweekend']; $checkTime = strtotime('2017-05-09 10:00:00'); if(empty($checkToday) &amp;&amp; time() &lt;= $checkTime){ ?&gt; &lt;div id="longweekend" style="position: absolute; top: 250px; left: 1110px; z-index: 999;"&gt; &lt;div id="lognweekendClose" style="background:#000;"&gt; &lt;img src="/pop/img/pop_close_600.png" usem.......
+]]>
+</description>
+<pubDate>Mon, 01 May 2017 17:45:48 +0900</pubDate>
+<tag>
+<![CDATA[ ]]>
+</tag>
+<activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+<activity:object-type>http://activitystrea.ms/schema/1.0/blog-entry</activity:object-type>
+</item>
+<item>
+<author>ultrajg86</author>
+<category>
+<![CDATA[ 이런망할! ]]>
+</category>
+<title>
+<![CDATA[ 회묵읐당~헤헤헹 ]]>
+</title>
+<link>http://blog.naver.com/ultrajg86/220984440660</link>
+<guid>http://blog.naver.com/ultrajg86/220984440660</guid>
+<description>
+<![CDATA[
+내가 고기 사줬다고 회사준다길래 좋다고 갔지~ㅋㅋㅋㅋ 노량진으로 하하하하하요건 1차 회 ㅋㅋㅋㅋㅋ 떠져있는 회를 가져오고~ 2차 회가 나오기전에 맥주 한잔 캬~ 역시 술은 낮술이지 ㅋㅋㅋㅋㅋㅋㅋ 회에는 소주라고? 무슨 그런 섭섭한 말씀을 기댕기보시오~ 요건 입가심 ㅋㅋㅋㅋㅋㅋㅋㅋ요건 2차회 광어랑 숭어인가 두마리 잡았따 ㅋㅋㅋㅋㅋㅋ 양이 어마어마해~이렇게 두판의 회를 아주아주 맛나게 먹었지 ㅋㅋㅋㅋㅋㅋ 그리고 술!!!! 회먹는다고 술먹는 사진을 못찍었네 ㅋㅋㅋㅋㅋ 그래서 준비했다!!!! 짜잔!!! 소주는 당연하지~ 매운탕까지 야무지게 먹고 왔다 ㅋㅋㅋㅋㅋ 노량진에서 한강을 갈려고했는데 버스를 잘못타서 강남까지 와.......
+]]>
+</description>
+<pubDate>Sun, 16 Apr 2017 11:58:21 +0900</pubDate>
+<tag>
+<![CDATA[ 노량진,수산시장,야구,회 ]]>
+</tag>
+<activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+<activity:object-type>http://activitystrea.ms/schema/1.0/blog-entry</activity:object-type>
+</item>
+<item>
+<author>ultrajg86</author>
+<category>
+<![CDATA[ 이런망할! ]]>
+</category>
+<title>
+<![CDATA[ 꽃이피네 ]]>
+</title>
+<link>http://blog.naver.com/ultrajg86/220977929404</link>
+<guid>http://blog.naver.com/ultrajg86/220977929404</guid>
+<description>
+<![CDATA[
+집에와서 씻고 놀아도 10시더라 그래서 메라와 놀러 나갔다 헤헤헹불광천이다 낮에보면 더 이쁠텐데 밤이라서 넘나 아쉽군...ㅠ 이제부터 벚꽃사진 빠뽜팡~~이렇게 투영되는 사진이 좋더라~요건 무보정이당 키키키키키키
+]]>
+</description>
+<pubDate>Fri, 07 Apr 2017 23:10:22 +0900</pubDate>
+<tag>
+<![CDATA[ 벚꽃,봄봄봄,불광천 ]]>
+</tag>
+<activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+<activity:object-type>http://activitystrea.ms/schema/1.0/blog-entry</activity:object-type>
+</item>
+<item>
+<author>ultrajg86</author>
+<category>
+<![CDATA[ Hypertext M.L ]]>
+</category>
+<title>
+<![CDATA[ 슬라이드 펼치지 접기 ]]>
+</title>
+<link>http://blog.naver.com/ultrajg86/220974952367</link>
+<guid>http://blog.naver.com/ultrajg86/220974952367</guid>
+<description>
+<![CDATA[
+알바하는데 클릭시에 메뉴를 밑으로 슬라이드 해달란다..그래서 열심히 뒤져서했다포지션을 앱솔루트로 잡아도 스크립트로 slideUp, slideDown시키면되서 상관은없다그리고 jquery의 next()가 해당 객체의 다음꺼를 의미한다 그래서 둘러싼놈 다음껄 펼치고접고 ㅋㅋㅋㅋㅋㅋㅋ &lt;style type="text/css"&gt;.slide_menu{position: absolute; right: 0; width: 50%; z-index: 10000;}.slide_menu ul{width: 100%; left: 0; top: 0; z-index: 10; background-image: url('images/bg_dot.png'); border: 1px solid rgb(165, 168, 171);}.slide_menu ul li{width: 100%;}.slide_menu ul li p{width: 100%;}.slide_menu .title{float: left; width: .......
+]]>
+</description>
+<pubDate>Tue, 04 Apr 2017 16:28:07 +0900</pubDate>
+<tag>
+<![CDATA[ ]]>
+</tag>
+<activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+<activity:object-type>http://activitystrea.ms/schema/1.0/blog-entry</activity:object-type>
+</item>
+<item>
+<author>ultrajg86</author>
+<category>
+<![CDATA[ 마이에스큐엘 ]]>
+</category>
+<title>
+<![CDATA[ MySQL 백업하기 ]]>
+</title>
+<link>http://blog.naver.com/ultrajg86/220974893447</link>
+<guid>http://blog.naver.com/ultrajg86/220974893447</guid>
+<description>
+<![CDATA[
+알바하는곳에서 디비를 제공해주지 않는단다그래서 putty로 접속해서 직접 받았다근데 간만에 디비 백업할려니 명령어가 기억이 안나드라...mysqldump ....... 다음이 머냐 ㅋㅋㅋㅋㅋㅋㅋ이럴댄 구글링이지 ㅋㅋㅋㅋ db1과 db2만 백업하기 하하하하하하 mysqldump --single-transaction --databases db1 db2 -h localhost -u root -pmypwd &gt; mydump.sql 굿잡!! 이제 카페24가서 넣으면되는데~하..phpmyadmin은 맘에안들어 항상 오류남...짜증나게 mysql -h dbhost2 -u root -pmypwd db2 &lt; mydump.sql 결국엔 카페24도 putty로 접속해서 restore 시켜줬다 아오..phpmyadmin은 걍 관리만 하는걸록~ㅋㅋㅋㅋㅋ 이렇게 오늘도 알바를 하나 끝.......
+]]>
+</description>
+<pubDate>Tue, 04 Apr 2017 15:26:32 +0900</pubDate>
+<tag>
+<![CDATA[ ]]>
+</tag>
+<activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+<activity:object-type>http://activitystrea.ms/schema/1.0/blog-entry</activity:object-type>
+</item>
+<item>
+<author>ultrajg86</author>
+<category>
+<![CDATA[ Hypertext P. ]]>
+</category>
+<title>
+<![CDATA[ hypertext preprocessor ]]>
+</title>
+<link>http://blog.naver.com/ultrajg86/220974697818</link>
+<guid>http://blog.naver.com/ultrajg86/220974697818</guid>
+<description>
+<![CDATA[ 일명 PHP 라고 불리는 언어이다. 나중에 집가서 써야지~ ]]>
+</description>
+<pubDate>Tue, 04 Apr 2017 11:34:34 +0900</pubDate>
+<tag>
+<![CDATA[ 첫글 ]]>
+</tag>
+<activity:verb>http://activitystrea.ms/schema/1.0/post</activity:verb>
+<activity:object-type>http://activitystrea.ms/schema/1.0/blog-entry</activity:object-type>
+</item>
+</channel>
+</rss>

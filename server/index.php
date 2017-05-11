@@ -1,4 +1,5 @@
 <?php
+
 /*
 header( 'Access-Control-Allow-Origin: *' );
 header( 'Access-Control-Allow-Methods: GET, POST, OPTIONS' );
@@ -42,3 +43,42 @@ $app->get('/testheroes', function (Request $request, Response $response) {
 });
 
 $app->run();
+
+/*
+<html>
+	<head>
+		<script type="text/javascript">
+			function loadXMLDoc(dname){
+                if (window.XMLHttpRequest){
+                    xhttp=new XMLHttpRequest();
+                }else{
+                    xhttp=new ActiveXObject("Microsoft.XMLDOM");
+                }
+
+                xhttp.open("GET",dname,false);
+                xhttp.send();
+                return xhttp.responseXML;
+            }
+
+		</script>
+	</head>
+	<body>
+
+		<div id="output"></div>
+
+		<script type="text/javascript">
+		
+			xmlDoc=loadXMLDoc("http://localhost:8888/book.xml"); 
+				
+			objXml = xmlDoc.getElementsByTagName("channel")[0].getElementsByTagName("item");
+			ouput = document.getElementById("output");
+			for(i=0; i<objXml.length; i++){
+				output.innerHTML = output.innerHTML + objXml[i].getElementsByTagName("description")[0].textContent + "   <hr/>";
+				console.log(objXml[i]);
+			}
+
+		</script>
+
+	</body>
+</html>
+*/

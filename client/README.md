@@ -9,7 +9,7 @@ default port : 4200
 ng serve
 
 
-npm install angular-in-memory-web-api --save
+<del>npm install angular-in-memory-web-api --save</del>
 
 
 # ah...

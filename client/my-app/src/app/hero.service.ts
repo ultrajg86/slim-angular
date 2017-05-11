@@ -25,7 +25,7 @@ export class HeroService {
   var url: string = "http://localhost:8888/hello/aaaaaaaaaaa";
 	
 this.result = this.http.get(url).map((response: Response)=>response.json()).subscribe(
-	data=>{
+	data=>{		
 		console.log('data', data);
 	},
 	error=>{
