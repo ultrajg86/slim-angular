@@ -20,17 +20,51 @@ class UserController{
         // TODO: Implement __destruct() method.
     }
 
-	public function login($request, $response, $params){
+	public function checkId($request, $response, $params){
 		if($params['userid'] === 'admin'){
-			return json_encode(array('name'=>'success'));
+			return json_encode(array('result'=>'fail'));
 		}else{
-			return json_encode(array('name'=>'fail'));
+			return json_encode(array('result'=>'success'));
+		}
+	}
+
+	public function login($request, $response, $params){
+		$jsonData = json_decode($request->getBody()->getContents());
+		if(empty($jsonData->userid) === false && $jsonData->userid === 'admin'){
+			return json_encode(array('result'=>'success'));
+		}else{
+			return json_encode(array('result'=>'fail'));
+		}
+	}
+
+	public function logout($request, $response, $params){
+		if($params['userid'] === 'admin'){
+			return json_encode(array('result'=>'success'));
+		}else{
+			return json_encode(array('result'=>'fail'));
 		}
 	}
 
 	public function join($request, $response, $params){
 		$joinData = json_decode($request->getBody()->getContents());
 		var_dump($joinData);
+	}
+
+	public function info($request, $response, $params){
+		var_dump($params);
+		if($params['userid'] === 'admin'){
+			return json_encode(array('result'=>'success'));
+		}else{
+			return json_encode(array('result'=>'fail'));
+		}
+	}
+
+	public function modify($request, $response, $params){
+		if($params['userid'] === 'admin'){
+			return json_encode(array('result'=>'success'));
+		}else{
+			return json_encode(array('result'=>'fail'));
+		}
 	}
 
 }

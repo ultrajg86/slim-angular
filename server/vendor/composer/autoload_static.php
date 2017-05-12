@@ -144,6 +144,7 @@ class ComposerStaticInitfa431b91bfb175f8f29c055a5b4e28ce
     );
 
     public static $classMap = array (
+        'App\\Controllers\\BoardController' => __DIR__ . '/../..' . '/app/controllers/BoardController.php',
         'App\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/controllers/UserController.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
