@@ -13,4 +13,6 @@ $app->group('/api', function(){
 		var_dump($request->getBody());
 	});
 
+	$this->post('/join', 'UserController:join');
+
 });

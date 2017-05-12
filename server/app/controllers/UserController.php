@@ -28,4 +28,9 @@ class UserController{
 		}
 	}
 
+	public function join($request, $response, $params){
+		$joinData = json_decode($request->getBody()->getContents());
+		var_dump($joinData);
+	}
+
 }
