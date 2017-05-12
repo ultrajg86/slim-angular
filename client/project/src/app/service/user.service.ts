@@ -16,7 +16,7 @@ export class UserService {
 
   public userId(id: string): Promise<string>{
 
-    return this.http.get(this.baseUrl + '/' + id)
+    return this.http.get(this.baseUrl + '/login/' + id)
 	     .toPromise()
 	     .then(response => response.json().name);
 

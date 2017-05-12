@@ -11,45 +11,17 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 require 'vendor/autoload.php';
 
-$app = new \Slim\App;
-/*
-$app->add(function ($req, $res, $next) {
-    $response = $next($req, $res);
-    return $response
-            ->withHeader('Access-Control-Allow-Origin', 'http://mysite')
-            ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
-            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-});
-*/
-$app->get('/', function (Request $request, Response $response) {
-	$response->getBody()->write('Hello World');
-	return $response;
-});
+$settings = require './app/settings.php';
 
-$app->get('/hello/{name}', function (Request $request, Response $response) {
-    $name = $request->getAttribute('name');
-    //$response->getBody()->write("Hello, $name");
-	$result = array(
-		'name'=>$name
-	);
-//    return $response;
-return json_encode($result);
-});
+$app = new \Slim\App($settings);
 
-$app->get('/testheroes', function (Request $request, Response $response) {
-    $name = $request->getAttribute('name');
-    $response->getBody()->write("Hello, $name");
+require './app/constants.php';
 
-    return $response;
-});
+require './app/dependencies.php';
 
-$app->get('/api/{name}', function (Request $request, Response $response) {
-    $name = $request->getAttribute('name');
-    $result = array(
-		'name'=>$name
-	);
-	return json_encode($result);
-});
+require './app/middleware.php';
+
+require './app/route.php';
 
 $app->run();
 
