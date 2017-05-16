@@ -18,8 +18,10 @@ class UserRepo{
 			return false;
 		}
 
-		//search userinfo
-		return $userinfo;
+		//$data = $this->userModel->find('1');
+		$user = $this->userModel->where('user_id', $userinfo['userid'])->first();
+
+		return $user;
 	}
 
 	public function fetchAll($page = 1, $limit = 10){

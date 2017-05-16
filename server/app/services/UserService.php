@@ -14,8 +14,13 @@ class UserService{
 	}
 
 	public function check($checkUserId){
+		if(empty($checkUserId)){
+			return true;
+		}
+
 		$result = $this->userRepo->find(array('userid'=>$checkUserId));
-		if($result === false){
+
+		if(isset($result->user_id) == false){	//해당아이디가 없다면
 			return array('result'=>true);
 		}
 		return array('result'=>false);
