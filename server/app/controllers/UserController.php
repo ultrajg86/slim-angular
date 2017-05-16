@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Repositories\UserRepo;
+
 class UserController{
 
 	private $container;
@@ -9,23 +11,32 @@ class UserController{
     private $view;
     private $validator;
 
+	private $userService;
+
 	public function __construct($container){
         $this->container = $container;
         $this->logger = $this->container->get('logger');
         //$this->view = $this->container->get('view');
         //$this->validator = $this->container->get('validator');
+
+		$this->userService = $container['UserService'];
     }
 
 	public function __destruct(){
         // TODO: Implement __destruct() method.
     }
 
-	public function checkId($request, $response, $params){
+	public function check($request, $response, $params){
+		/*
 		if($params['userid'] === 'admin'){
 			return json_encode(array('result'=>'fail'));
 		}else{
 			return json_encode(array('result'=>'success'));
 		}
+		*/
+
+		$data = $this->userService->check($params['userid']);
+		return $response->withJson($data);
 	}
 
 	public function login($request, $response, $params){

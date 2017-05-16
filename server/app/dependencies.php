@@ -8,10 +8,27 @@
 
 // Get container
 $container = $app->getContainer();
+
+//validator
+$container['validator'] = function($container){
+  return new \App\Validation\Validator();
+};
+
+//404
+$container['notFoundHandler'] = function ($container) {
+    return function ($request, $response) use ($container) {
+        return $c['response']
+            ->withStatus(404)
+            ->withHeader('Content-Type', 'text/html')
+            ->write('Page not found');
+    };
+};
+
 $capsule = new \Illuminate\Database\Capsule\Manager;
 $capsule->addConnection($container['settings']['db']);
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
+
 // Service factory for the ORM
 $container['db'] = function ($container) use ($capsule) {
     return $capsule;
@@ -30,49 +47,6 @@ $container['logger'] = function($container){
   return $logger;
 };
 
-//validator
-$container['validator'] = function($container){
-  return new \App\Validation\Validator();
-};
-
-//404
-$container['notFoundHandler'] = function ($container) {
-    return function ($request, $response) use ($container) {
-        return $c['response']
-            ->withStatus(404)
-            ->withHeader('Content-Type', 'text/html')
-            ->write('Page not found');
-    };
-};
-
-//controller
-$container['UserController'] = function ($container) {
-    return new \App\Controllers\UserController($container);
-};
-
-$container['BoardController'] = function ($container) {
-    return new \App\Controllers\BoardController($container);
-};
-
-
-
-/*
-$container['view'] = function ($container) {
-    //$view = new \Slim\Views\Twig('pages', ['cache' => 'cache']);
-    $view = new \Slim\Views\Twig('pages', [
-        'debug' => true,
-        'cache' => false
-    ]);
-    // Instantiate and add Slim specific extension
-    $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
-    $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
-//    $view->addExtension(new \Slim\Views\TwigExtension(
-//        $container->router,
-//        $container->request->getUri()
-//    ));
-//    $view->addExtension(new Twig_Extension_Debug());
-    //hm.....
-    $view->getEnvironment()->addGlobal('base_url', _HOST_);
-    return $view;
-};
-*/
+require_once('dependencies/controllers.php');
+require_once('dependencies/repositories.php');
+require_once('dependencies/services.php');

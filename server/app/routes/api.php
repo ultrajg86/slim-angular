@@ -2,7 +2,7 @@
 
 $app->group('/api', function(){
 
-	$this->get('/check/{userid}', 'UserController:checkId');	//중복체크
+	$this->get('/check/{userid}', 'UserController:check');	//중복체크
 
 	$this->post('/login', 'UserController:login');	//로그인
 

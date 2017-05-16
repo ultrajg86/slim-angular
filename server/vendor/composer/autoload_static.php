@@ -146,6 +146,9 @@ class ComposerStaticInitfa431b91bfb175f8f29c055a5b4e28ce
     public static $classMap = array (
         'App\\Controllers\\BoardController' => __DIR__ . '/../..' . '/app/controllers/BoardController.php',
         'App\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/controllers/UserController.php',
+        'App\\Model\\UserModel' => __DIR__ . '/../..' . '/app/models/UserModel.php',
+        'App\\Repositories\\UserRepo' => __DIR__ . '/../..' . '/app/repositories/UserRepo.php',
+        'App\\Services\\UserService' => __DIR__ . '/../..' . '/app/services/UserService.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
