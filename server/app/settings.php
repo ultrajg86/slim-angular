@@ -13,7 +13,7 @@ return [
         'db'=>[
             'driver' => 'mysql',
             'host' => 'localhost',
-            'database' => 'imi_test',
+            'database' => 'boardt',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',

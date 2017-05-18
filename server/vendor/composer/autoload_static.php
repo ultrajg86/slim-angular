@@ -19,6 +19,7 @@ class ComposerStaticInitfa431b91bfb175f8f29c055a5b4e28ce
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\Translation\\' => 30,
             'Slim\\Views\\' => 11,
+            'Slim\\Middleware\\' => 16,
             'Slim\\' => 5,
         ),
         'P' => 
@@ -41,6 +42,7 @@ class ComposerStaticInitfa431b91bfb175f8f29c055a5b4e28ce
         ),
         'F' => 
         array (
+            'Firebase\\JWT\\' => 13,
             'FastRoute\\' => 10,
         ),
         'C' => 
@@ -61,6 +63,10 @@ class ComposerStaticInitfa431b91bfb175f8f29c055a5b4e28ce
         'Slim\\Views\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/twig-view/src',
+        ),
+        'Slim\\Middleware\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src',
         ),
         'Slim\\' => 
         array (
@@ -101,6 +107,10 @@ class ComposerStaticInitfa431b91bfb175f8f29c055a5b4e28ce
         'Illuminate\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/container',
+        ),
+        'Firebase\\JWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
         ),
         'FastRoute\\' => 
         array (
@@ -146,7 +156,10 @@ class ComposerStaticInitfa431b91bfb175f8f29c055a5b4e28ce
     public static $classMap = array (
         'App\\Controllers\\BoardController' => __DIR__ . '/../..' . '/app/controllers/BoardController.php',
         'App\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/controllers/UserController.php',
+        'App\\Model\\BoardModel' => __DIR__ . '/../..' . '/app/models/BoardModel.php',
+        'App\\Model\\TokenModel' => __DIR__ . '/../..' . '/app/models/TokenModel.php',
         'App\\Model\\UserModel' => __DIR__ . '/../..' . '/app/models/UserModel.php',
+        'App\\Repositories\\TokenRepo' => __DIR__ . '/../..' . '/app/repositories/TokenRepo.php',
         'App\\Repositories\\UserRepo' => __DIR__ . '/../..' . '/app/repositories/UserRepo.php',
         'App\\Services\\UserService' => __DIR__ . '/../..' . '/app/services/UserService.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
@@ -170,6 +183,10 @@ class ComposerStaticInitfa431b91bfb175f8f29c055a5b4e28ce
         'FastRoute\\RouteCollector' => __DIR__ . '/..' . '/nikic/fast-route/src/RouteCollector.php',
         'FastRoute\\RouteParser' => __DIR__ . '/..' . '/nikic/fast-route/src/RouteParser.php',
         'FastRoute\\RouteParser\\Std' => __DIR__ . '/..' . '/nikic/fast-route/src/RouteParser/Std.php',
+        'Firebase\\JWT\\BeforeValidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/BeforeValidException.php',
+        'Firebase\\JWT\\ExpiredException' => __DIR__ . '/..' . '/firebase/php-jwt/src/ExpiredException.php',
+        'Firebase\\JWT\\JWT' => __DIR__ . '/..' . '/firebase/php-jwt/src/JWT.php',
+        'Firebase\\JWT\\SignatureInvalidException' => __DIR__ . '/..' . '/firebase/php-jwt/src/SignatureInvalidException.php',
         'Illuminate\\Container\\BoundMethod' => __DIR__ . '/..' . '/illuminate/container/BoundMethod.php',
         'Illuminate\\Container\\Container' => __DIR__ . '/..' . '/illuminate/container/Container.php',
         'Illuminate\\Container\\ContextualBindingBuilder' => __DIR__ . '/..' . '/illuminate/container/ContextualBindingBuilder.php',
@@ -579,6 +596,10 @@ class ComposerStaticInitfa431b91bfb175f8f29c055a5b4e28ce
         'Slim\\Interfaces\\RouteInterface' => __DIR__ . '/..' . '/slim/slim/Slim/Interfaces/RouteInterface.php',
         'Slim\\Interfaces\\RouterInterface' => __DIR__ . '/..' . '/slim/slim/Slim/Interfaces/RouterInterface.php',
         'Slim\\MiddlewareAwareTrait' => __DIR__ . '/..' . '/slim/slim/Slim/MiddlewareAwareTrait.php',
+        'Slim\\Middleware\\JwtAuthentication' => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src/JwtAuthentication.php',
+        'Slim\\Middleware\\JwtAuthentication\\RequestMethodRule' => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src/JwtAuthentication/RequestMethodRule.php',
+        'Slim\\Middleware\\JwtAuthentication\\RequestPathRule' => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src/JwtAuthentication/RequestPathRule.php',
+        'Slim\\Middleware\\JwtAuthentication\\RuleInterface' => __DIR__ . '/..' . '/tuupola/slim-jwt-auth/src/JwtAuthentication/RuleInterface.php',
         'Slim\\Routable' => __DIR__ . '/..' . '/slim/slim/Slim/Routable.php',
         'Slim\\Route' => __DIR__ . '/..' . '/slim/slim/Slim/Route.php',
         'Slim\\RouteGroup' => __DIR__ . '/..' . '/slim/slim/Slim/RouteGroup.php',

@@ -5,8 +5,8 @@
  * Date: 2017-02-14
  * Time: 오전 10:45
  */
+
 //middleware
-// routes...
 $app->add(function ($request, $response, callable $next) {
     $route = $request->getAttribute('route');
     if (empty($route)) {
@@ -22,20 +22,27 @@ $app->add(function ($request, $response, callable $next) {
 	$view->setAttributes($arrayViewVar);
 	*/
 
-/*
-	// add media parser
-    $request->registerMediaTypeParser(
-        "application/json",
-        function ($input) {
-            return json_decode($input, true);
-        }
-    );
-*/
-
     $response = $next($request, $response);
-
-
-
 
     return $response;
 });
+
+$apiMw = function ($request, $response, $next) {
+
+	$param = json_decode($request->getBody()->getContents(), true);
+
+	$request = $request->withAttribute('param', $param);
+    
+	$response = $next($request, $response);
+
+    return $response;
+};
+
+$webMw = function ($request, $response, $next) {
+
+    $request = $request->withAttribute('param', $_REQUEST);
+
+	$response = $next($request, $response);
+
+    return $response;
+};

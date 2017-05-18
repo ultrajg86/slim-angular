@@ -32,11 +32,13 @@ $app->group('/api', function(){
 
 	});
 
-});
+})->add($apiMw);
 
 /*
 1. 로그인 후 로그아웃은 필수로한다는 조건
 2. token은 나중에 처리해야함...ㅠㅠㅠㅠ
 3. 현재 웹페이지가 없이 api만 제공해서 웹에서도 접근가능하게 미들웨어나 컨트롤러가 처리되야할듯함
 4. 토큰은 jwt를 공부해보자...
+
+https://github.com/tuupola/slim-jwt-auth
 */

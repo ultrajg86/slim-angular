@@ -5,9 +5,11 @@ namespace App\Services;
 class UserService{
 
 	private $userRepo;
+	private $tokenRepo;
 	
 	public function __construct($container){
 		$this->userRepo = $container['UserRepo'];
+		$this->tokenRepo = $container['TokenRepo'];
 	}
 
 	public function __destruct(){
@@ -15,25 +17,49 @@ class UserService{
 
 	public function check($checkUserId){
 		if(empty($checkUserId)){
-			return true;
+			return false;
 		}
 
-		$result = $this->userRepo->find(array('userid'=>$checkUserId));
+		$result = $this->userRepo->find(array('user_id'=>$checkUserId));
 
-		if(isset($result->user_id) == false){	//해당아이디가 없다면
+		//$this->userRepo->create();
+
+		if($result !== false && isset($result->user_id) == false){	//해당아이디가 없다면
 			return array('result'=>true);
 		}
 		return array('result'=>false);
 	}
 
-	public function login(){//로그인처리 및 포인트지급
+	public function join($data){
+		$result = $this->check($data['userid']);
+		if($result['result'] !== true){
+			return false;
+		}
+		$result = $this->userRepo->create($data);
+	}
+
+	public function login($userId, $userPwd){
 		//start transaction
 		//logic
 		//commit
 
-		//login ok
-		//jwt => json token
-		return array('aaa'=>'bbbbbbb');
+		$result = $this->userRepo->find(array('user_id'=>$userId, 'user_pwd'=>$userPwd));
+		if(empty($result) || $result === false){
+			return false;
+		}
+
+		//token
+		$result = $this->tokenRepo->create($result->idx);
+
+		return $result;
+	}
+
+	public function logout($userId){
+		$result = $this->userRepo->find(array('user_id'=>$userId));
+		if(empty($result) || $result === false){
+			return false;
+		}
+		return $this->tokenRepo->delete($result->idx);
 	}
 
 }

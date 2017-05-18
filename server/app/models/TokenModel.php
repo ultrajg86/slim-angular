@@ -8,12 +8,12 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model as Model;
 
-class UserModel extends Model{
+class TokenModel extends Model{
 
-	protected $table = 'users';
+	protected $table = 'users_token';
 	protected $primaryKey = 'idx';
 	public $timestamps = false;
-	public $fillable = ['user_id', 'user_pwd', 'user_name', 'user_perm', 'reg_date'];
+	public $fillable = ['users_idx', 'user_token', 'expire_date'];
 
 	public function __construct(){
 	}
