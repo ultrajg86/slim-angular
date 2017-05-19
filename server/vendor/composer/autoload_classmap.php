@@ -456,6 +456,7 @@ return array(
     'Slim\\Route' => $vendorDir . '/slim/slim/Slim/Route.php',
     'Slim\\RouteGroup' => $vendorDir . '/slim/slim/Slim/RouteGroup.php',
     'Slim\\Router' => $vendorDir . '/slim/slim/Slim/Router.php',
+    'Slim\\Views\\PhpRenderer' => $vendorDir . '/slim/php-view/src/PhpRenderer.php',
     'Slim\\Views\\Twig' => $vendorDir . '/slim/twig-view/src/Twig.php',
     'Slim\\Views\\TwigExtension' => $vendorDir . '/slim/twig-view/src/TwigExtension.php',
     'Symfony\\Component\\Translation\\Catalogue\\AbstractOperation' => $vendorDir . '/symfony/translation/Catalogue/AbstractOperation.php',

@@ -62,4 +62,20 @@ class UserService{
 		return $this->tokenRepo->delete($result->idx);
 	}
 
+	public function info($userId){
+		$result = $this->userRepo->find(array('user_id'=>$userId));
+		if(empty($result) || $result === false){
+			return false;
+		}
+		return $result;
+	}
+
+	public function modify($data){		
+		$result = $this->userRepo->modify($data);
+		if(empty($result) || $result === false){
+			return false;
+		}
+		return $result;
+	}
+
 }

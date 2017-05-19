@@ -8,8 +8,8 @@ class ComposerStaticInitfa431b91bfb175f8f29c055a5b4e28ce
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
+        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
     );
 
@@ -63,6 +63,7 @@ class ComposerStaticInitfa431b91bfb175f8f29c055a5b4e28ce
         'Slim\\Views\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/twig-view/src',
+            1 => __DIR__ . '/..' . '/slim/php-view/src',
         ),
         'Slim\\Middleware\\' => 
         array (
@@ -604,6 +605,7 @@ class ComposerStaticInitfa431b91bfb175f8f29c055a5b4e28ce
         'Slim\\Route' => __DIR__ . '/..' . '/slim/slim/Slim/Route.php',
         'Slim\\RouteGroup' => __DIR__ . '/..' . '/slim/slim/Slim/RouteGroup.php',
         'Slim\\Router' => __DIR__ . '/..' . '/slim/slim/Slim/Router.php',
+        'Slim\\Views\\PhpRenderer' => __DIR__ . '/..' . '/slim/php-view/src/PhpRenderer.php',
         'Slim\\Views\\Twig' => __DIR__ . '/..' . '/slim/twig-view/src/Twig.php',
         'Slim\\Views\\TwigExtension' => __DIR__ . '/..' . '/slim/twig-view/src/TwigExtension.php',
         'Symfony\\Component\\Translation\\Catalogue\\AbstractOperation' => __DIR__ . '/..' . '/symfony/translation/Catalogue/AbstractOperation.php',

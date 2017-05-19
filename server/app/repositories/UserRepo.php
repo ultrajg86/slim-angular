@@ -32,7 +32,8 @@ class UserRepo{
 			'user_id'=>$data['userid'],
 			'user_pwd'=>$data['userpwd'],
 			'user_name'=>$data['username'],
-			'user_perm'=>'0'
+			'user_perm'=>$data['userperm'],
+			'reg_date' => date('Y-m-d H:i:s')
 		);
 
 		foreach($data as $key=>$value){
@@ -47,6 +48,21 @@ class UserRepo{
 
 	public function fetchAll($page = 1, $limit = 10){
 		$this->userModel->fetchAll();
+	}
+
+	public function modify($data=array()){
+		if(count($data) < 1){
+			return false;
+		}
+
+		$params = array(
+			'user_name'	=>	isset($data['username']) ? $data['username'] : '',
+			'user_pwd'	=>	isset($data['userpwd']) ? $data['userpwd'] : '',
+			'user_perm'	=>	isset($data['userperm']) ? $data['userperm'] : '',
+		);
+		$where = array('user_id'=>$data['userid']);
+		return $this->userModel->modify($params, $where);
+
 	}
 
 }

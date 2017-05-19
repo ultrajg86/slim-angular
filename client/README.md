@@ -1,3 +1,8 @@
+# App 전용?
+
+
+
+
 # Angular CLI Install
 $ npm install -g @angular/cli
 

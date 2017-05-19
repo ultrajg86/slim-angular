@@ -1,5 +1,12 @@
 <div>
 	<p>user name : {{username}}</p>
 	<input type="text" id="username" name="username" />
-	<button type="button" (click)="userIdCheck();">send</button>
+	<button type="button" (click)="userIdCheck();" class="btn btn-default btn-sm">send</button>
+</div>
+
+<div>
+	<p>LOGIN</p>
+	<input type="text" id="userid" name="userid" class="form-control" /><br/>
+	<input type="text" id="userpw" name="userpw" class="form-control" /><br/>
+	<button type="button" (click)="userLogin();" class="btn btn-default btn-sm">Login</button>
 </div>

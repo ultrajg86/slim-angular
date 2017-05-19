@@ -4,7 +4,8 @@ $app->group('/api', function(){
 
 	$this->get('/check/{userid}', 'UserController:check');	//중복체크
 
-	$this->post('/login', 'UserController:login');	//로그인
+	//$this->post('/login', 'UserController:login');	//로그인
+	$this->map(['POST', 'OPTIONS'], '/login', 'UserController:login');	//로그인
 
 	$this->post('/logout', 'UserController:logout');	//로그아웃 - 토큰값 전달(토큰삭제)
 

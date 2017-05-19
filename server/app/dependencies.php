@@ -42,7 +42,7 @@ $container['view'] = function($container){
 //logging
 $container['logger'] = function($container){
   $logger = new \Monolog\Logger('LOG');
-  $file_handler = new \Monolog\Handler\StreamHandler('../logs/' . date('Y-m-d') . '.log');
+  $file_handler = new \Monolog\Handler\StreamHandler('logs/' . date('Y-m-d') . '.log');
   $logger->pushHandler($file_handler);
   return $logger;
 };

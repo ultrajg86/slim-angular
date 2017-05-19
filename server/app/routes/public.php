@@ -6,21 +6,8 @@
 $app->group('', function () {
 
 	$this->get('/', function($request, $response, $args){
-		echo '
-			<html>
-				<head>
-					<title>asdfasdf</title>
-				</head>
-				<body>
-					<form action="/login" method="post">
-						ID : <input type="text" name="userid" /><br/>
-						PW : <input type="text" name="userpwd" /><br/>
-						<button type="submit">login</button>
-					</form>
-				</body>
-			</html>
-		';
-		//return $response;
+		//return $response->withRedirect('http://localhost:4200'); 
+		return $this->view->render($response, 'index.html');
 	});
 
 	$this->get('/check/{userid}', 'UserController:check');	//중복체크
@@ -41,6 +28,8 @@ $app->group('', function () {
 
 	//게시판
 	$this->group('/board', function(){	//회원전용
+
+		$this->get('', 'BoardController:lists');
 
 		$this->get('/list[/{searchword}]', 'BoardController:lists');	//목록	=> 페이지는 ? 물음표로
 

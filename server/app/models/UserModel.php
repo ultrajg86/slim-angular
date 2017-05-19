@@ -36,4 +36,12 @@ class UserModel extends Model{
 		return $this->save();
 	}
 
+	public function modify($data, $where = array()){		
+		$obj = $this;
+		foreach($where as $key=>$value){
+			$obj = $obj->where($key, $value);
+		}
+		return $obj->update($data);
+	}
+
 }

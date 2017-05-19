@@ -13,18 +13,19 @@ $app->add(function ($request, $response, callable $next) {
         throw new NotFoundException($request, $response);
     }
 
-	/*
+	$logger = $this->get('logger');
+	$logger->info('asdfasdfasdfasdf');
+
 	$view = $this->get('view');
 	$arrayViewVar = array(
 	    'baseUrl'   =>  $_SERVER['HTTP_HOST'],
 		'title'	=>	'Project',
 	);
 	$view->setAttributes($arrayViewVar);
-	*/
 
     $response = $next($request, $response);
-
-    return $response;
+	
+	return $response;
 });
 
 $apiMw = function ($request, $response, $next) {
@@ -39,7 +40,7 @@ $apiMw = function ($request, $response, $next) {
 };
 
 $webMw = function ($request, $response, $next) {
-
+	
     $request = $request->withAttribute('param', $_REQUEST);
 
 	$response = $next($request, $response);

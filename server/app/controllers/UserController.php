@@ -16,7 +16,7 @@ class UserController{
 	public function __construct($container){
         $this->container = $container;
         $this->logger = $this->container->get('logger');
-        //$this->view = $this->container->get('view');
+        $this->view = $this->container->get('view');
         //$this->validator = $this->container->get('validator');
 
 		$this->userService = $container['UserService'];
@@ -31,6 +31,9 @@ class UserController{
 		if($data === false){
 			return $response->withStatus(204);
 		}
+
+		//return $this->view->render($response, 'index.html', $data);
+
 		return $response->withJson($data);
 	}
 
@@ -47,7 +50,8 @@ class UserController{
 			return $response->withJson($data);
 		}
 		$data['result'] = true;
-		return $response->withJson($data);
+		$response = $response->withJson($data);
+		return $response;
 	}
 
 	public function logout($request, $response, $params){
@@ -58,12 +62,13 @@ class UserController{
 			return $response->withJson($data);
 		}
 		$data = array('result'=>true);
-		return $response->withJson($data);
+		$response = $response->withJson($data);
+		return $response;
 	}
 
 	public function join($request, $response, $params){
-		$data = json_decode($request->getBody()->getContents(), true);
-		$result = $this->userService->join($data);
+		$params = $request->getAttribute('param');
+		$result = $this->userService->join($params);
 		if($result === false){
 			$data = array('result'=>false);
 			return $response->withJson($data);
@@ -73,19 +78,27 @@ class UserController{
 	}
 
 	public function info($request, $response, $params){
-		if($params['userid'] === 'admin'){
-			return json_encode(array('result'=>'success'));
-		}else{
-			return json_encode(array('result'=>'fail'));
+		//$params = $request->getAttribute('param');
+		$data = $this->userService->info($params['userid']);
+		if($data === false){
+			$data = array('result'=>false);
+			return $response->withJson($data);
 		}
+		$data['result']=true;
+		$response = $response->withJson($data);
+		return $response;
 	}
 
 	public function modify($request, $response, $params){
-		if($params['userid'] === 'admin'){
-			return json_encode(array('result'=>'success'));
-		}else{
-			return json_encode(array('result'=>'fail'));
+		$params = $request->getAttribute('param');
+		$data = $this->userService->modify($params);
+		if($data === false){
+			$data = array('result'=>false);
+			return $response->withJson($data);
 		}
+		$data = array('result'=>true);
+		$response = $response->withJson($data);
+		return $response;
 	}
 
 }

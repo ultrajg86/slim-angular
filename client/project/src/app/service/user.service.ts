@@ -16,12 +16,18 @@ export class UserService {
 
   public userId(id: string): Promise<string>{
 
-    return this.http.get(this.baseUrl + '/login/' + id)
+    return this.http.get(this.baseUrl + '/check/' + id)
 	     .toPromise()
-	     .then(response => response.json().name);
+	     .then(response => response.text());
 
   }
 
+  public login(id: string, pw: string): Promise<string>{
+	let data = {'userid': id, 'userpwd': pw};
+	return this.http.post(this.baseUrl + '/login', JSON.stringify(data), {headers: this.headers})
+		.toPromise()
+	     .then(response => response.text());
+  }
 
 
 }
