@@ -6,7 +6,6 @@
  * Time: 오전 10:45
  */
 //middleware
-// routes...
 $app->add(function ($request, $response, callable $next) {
     $route = $request->getAttribute('route');
     if (empty($route)) {
@@ -33,9 +32,6 @@ $app->add(function ($request, $response, callable $next) {
 */
 
     $response = $next($request, $response);
-
-
-
 
     return $response;
 });
