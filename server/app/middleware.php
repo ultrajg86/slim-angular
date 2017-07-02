@@ -28,25 +28,20 @@ $app->add(function ($request, $response, callable $next) {
 	return $response;
 });
 
-<<<<<<< HEAD
-=======
 $apiMw = function ($request, $response, $next) {
-
 	$param = json_decode($request->getBody()->getContents(), true);
-
+	$view = $this->get('view');
+	$view->setMimeType('json');
 	$request = $request->withAttribute('param', $param);
-    
 	$response = $next($request, $response);
-
->>>>>>> 86b56fe7f8f7195dd5f74e1a851d8e9d83a71d13
     return $response;
 };
 
 $webMw = function ($request, $response, $next) {
-	
     $request = $request->withAttribute('param', $_REQUEST);
-
+	$view = $this->get('view');
+	$view->setMimeType('json');
+	$view->setResponse($response);
 	$response = $next($request, $response);
-
     return $response;
 };

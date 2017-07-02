@@ -6,8 +6,8 @@
 $app->group('', function () {
 
 	$this->get('/', function($request, $response, $args){
-		//return $response->withRedirect('http://localhost:4200'); 
-		return $this->view->render($response, 'index.html');
+		//return $response->withRedirect('http://localhost:4200');
+		return $this->view->render($response, 'index.html', array('key'=>'value', 'key1'=>'value1'));
 	});
 
 	$this->get('/check/{userid}', 'UserController:check');	//중복체크

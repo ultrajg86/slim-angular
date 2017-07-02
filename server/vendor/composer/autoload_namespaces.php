@@ -9,5 +9,5 @@ return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'Pimple' => array($vendorDir . '/pimple/pimple/src'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
-    'App' => array($baseDir . '/app'),
+    'App' => array($baseDir . '/class'),
 );

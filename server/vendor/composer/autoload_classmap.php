@@ -6,14 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\Controllers\\BoardController' => $baseDir . '/app/controllers/BoardController.php',
-    'App\\Controllers\\UserController' => $baseDir . '/app/controllers/UserController.php',
-    'App\\Model\\BoardModel' => $baseDir . '/app/models/BoardModel.php',
-    'App\\Model\\TokenModel' => $baseDir . '/app/models/TokenModel.php',
-    'App\\Model\\UserModel' => $baseDir . '/app/models/UserModel.php',
-    'App\\Repositories\\TokenRepo' => $baseDir . '/app/repositories/TokenRepo.php',
-    'App\\Repositories\\UserRepo' => $baseDir . '/app/repositories/UserRepo.php',
-    'App\\Services\\UserService' => $baseDir . '/app/services/UserService.php',
+    'App\\PhpRenderer\\PhpRenderer' => $baseDir . '/class/PhpRenderer.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonInterval' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
     'Carbon\\Exceptions\\InvalidDateException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',

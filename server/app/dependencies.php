@@ -36,7 +36,8 @@ $container['db'] = function ($container) use ($capsule) {
 
 // Register component on container
 $container['view'] = function($container){
-    return new \Slim\Views\PhpRenderer('pages');
+    //return new \Slim\Views\PhpRenderer('pages');
+    return new \App\PhpRenderer\PhpRenderer('pages');
 };
 
 //logging
