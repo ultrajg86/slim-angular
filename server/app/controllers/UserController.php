@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Repositories\UserRepo;
+
 class UserController{
 
 	private $container;
@@ -9,62 +11,94 @@ class UserController{
     private $view;
     private $validator;
 
+	private $userService;
+
 	public function __construct($container){
         $this->container = $container;
         $this->logger = $this->container->get('logger');
-        //$this->view = $this->container->get('view');
+        $this->view = $this->container->get('view');
         //$this->validator = $this->container->get('validator');
+
+		$this->userService = $container['UserService'];
     }
 
 	public function __destruct(){
         // TODO: Implement __destruct() method.
     }
 
-	public function checkId($request, $response, $params){
-		if($params['userid'] === 'admin'){
-			return json_encode(array('result'=>'fail'));
-		}else{
-			return json_encode(array('result'=>'success'));
+	public function check($request, $response, $params){
+		$data = $this->userService->check($params['userid']);
+		if($data === false){
+			return $response->withStatus(204);
 		}
+
+		//return $this->view->render($response, 'index.html', $data);
+
+		return $response->withJson($data);
 	}
 
 	public function login($request, $response, $params){
-		$jsonData = json_decode($request->getBody()->getContents());
-		if(empty($jsonData->userid) === false && $jsonData->userid === 'admin'){
-			return json_encode(array('result'=>'success'));
-		}else{
-			return json_encode(array('result'=>'fail'));
+		$params = $request->getAttribute('param');
+		foreach($params as $key=>$value){
+			if(empty($value)){
+				return $response->withJson(array('result'=>false));
+			}
 		}
+		$data = $this->userService->login($params['userid'], $params['userpwd']);
+		if($data === false){
+			$data = array('result'=>false);
+			return $response->withJson($data);
+		}
+		$data['result'] = true;
+		$response = $response->withJson($data);
+		return $response;
 	}
 
 	public function logout($request, $response, $params){
-		if($params['userid'] === 'admin'){
-			return json_encode(array('result'=>'success'));
-		}else{
-			return json_encode(array('result'=>'fail'));
+		$params = $request->getAttribute('param');
+		$data = $this->userService->logout($params['userid']);
+		if($data === false){
+			$data = array('result'=>false);
+			return $response->withJson($data);
 		}
+		$data = array('result'=>true);
+		$response = $response->withJson($data);
+		return $response;
 	}
 
 	public function join($request, $response, $params){
-		$joinData = json_decode($request->getBody()->getContents());
-		var_dump($joinData);
+		$params = $request->getAttribute('param');
+		$result = $this->userService->join($params);
+		if($result === false){
+			$data = array('result'=>false);
+			return $response->withJson($data);
+		}
+		$data['result'] = true;
+		return $response->withJson($data);
 	}
 
 	public function info($request, $response, $params){
-		var_dump($params);
-		if($params['userid'] === 'admin'){
-			return json_encode(array('result'=>'success'));
-		}else{
-			return json_encode(array('result'=>'fail'));
+		//$params = $request->getAttribute('param');
+		$data = $this->userService->info($params['userid']);
+		if($data === false){
+			$data = array('result'=>false);
+			return $response->withJson($data);
 		}
+		$data['result']=true;
+		$response = $response->withJson($data);
+		return $response;
 	}
 
 	public function modify($request, $response, $params){
-		if($params['userid'] === 'admin'){
-			return json_encode(array('result'=>'success'));
-		}else{
-			return json_encode(array('result'=>'fail'));
+		$params = $request->getAttribute('param');
+		$data = $this->userService->modify($params);
+		if($data === false){
+			$data = array('result'=>false);
+			return $response->withJson($data);
 		}
+		$data = array('result'=>true);
+		$response = $response->withJson($data);
+		return $response;
 	}
 
 }

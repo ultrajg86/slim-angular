@@ -36,7 +36,13 @@
 	<tfoot>
 		<tr>
 			<td colspan="3">
-				1,2,3,4
+				<ul class="pagination pagination-sm">
+				  <li><a href="/board/list?page=1">1</a></li>
+				  <li class="active"><a href="/board/list?page=2">2</a></li>
+				  <li><a href="/board/list?page=3">3</a></li>
+				  <li><a href="/board/list?page=4">4</a></li>
+				  <li><a href="/board/list?page=5">5</a></li>
+				</ul>
 			</td>
 			<td>
 				<button type="button" class="btn btn-default btn-sm" (click)="boardWrite();">Write</button>

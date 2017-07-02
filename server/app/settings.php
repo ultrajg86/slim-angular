@@ -13,9 +13,9 @@ return [
         'db'=>[
             'driver' => 'mysql',
             'host' => 'localhost',
-            'database' => 'tracedb',
+            'database' => 'boardt',
             'username' => 'root',
-            'password' => '1111',
+            'password' => '',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => ''

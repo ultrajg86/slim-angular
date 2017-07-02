@@ -26,9 +26,31 @@ export class UserComponent implements OnInit {
     var self = this;
     let name = this.elementRef.nativeElement.querySelector('#username').value;
 
-   this.userService.userId(name).then(obj => this.username = obj);
+    this.userService.userId(name).then(obj => {
+	let json = JSON.parse(obj);
+	if(json.result == true){
+		this.username = '<span>사용가능합니다.</span>';
+	}else{
+		this.username = '<span>사용불가능합니다.</span>';
+	}
+	
+    });
 
     this.elementRef.nativeElement.querySelector('#username').value = '';
+  }
+
+  userLogin(): void{
+
+	  let userid = this.elementRef.nativeElement.querySelector('#userid').value;
+
+	  let userpw = this.elementRef.nativeElement.querySelector('#userpw').value;
+
+	  this.userService.login(userid, userpw).then(obj=>{
+		let json = JSON.parse(obj);
+		if(json.result == true){
+			alert('alal');
+		}
+	  });
   }
 
 }

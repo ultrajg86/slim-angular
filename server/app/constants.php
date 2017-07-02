@@ -16,3 +16,7 @@ defined('DIR_READ_MODE')   OR define('DIR_READ_MODE', 0755);
 defined('DIR_WRITE_MODE')  OR define('DIR_WRITE_MODE', 0755);
 defined('DIR_ALL_MODE')    OR define('DIR_ALL_MODE', 0777);
 defined('UPLOAD_ROOT')     OR define('UPLOAD_ROOT', __DIR__);
+
+
+//Status Code
+defined('_STATUS_CODE_')     OR define('_STATUS_CODE_', __DIR__);
