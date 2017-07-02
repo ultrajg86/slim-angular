@@ -30,9 +30,10 @@ $app->add(function ($request, $response, callable $next) {
 
 $apiMw = function ($request, $response, $next) {
 	$param = json_decode($request->getBody()->getContents(), true);
+	$request = $request->withAttribute('param', $param);
 	$view = $this->get('view');
 	$view->setMimeType('json');
-	$request = $request->withAttribute('param', $param);
+	$view->setResponse($response);
 	$response = $next($request, $response);
     return $response;
 };
@@ -40,7 +41,7 @@ $apiMw = function ($request, $response, $next) {
 $webMw = function ($request, $response, $next) {
     $request = $request->withAttribute('param', $_REQUEST);
 	$view = $this->get('view');
-	$view->setMimeType('json');
+	$view->setMimeType('html');
 	$view->setResponse($response);
 	$response = $next($request, $response);
     return $response;
